@@ -19,7 +19,7 @@ async function fetchUnpaidObjArray() {
     return new Promise(function(resolve, reject) {
         getDocs(unpaidCol).then(snapshot => {
             let unpaid = [];
-            snapshot.docs.forEach(elem => returnObjArry.push(elem.data()))
+            snapshot.docs.forEach(elem => unpaid.push(elem.data()))
             let paths = [];
             for(let elem in unpaid) {
                 paths.push({params: {paymentURL: unpaid[elem].url}})
